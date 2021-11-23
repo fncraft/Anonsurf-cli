@@ -15,7 +15,7 @@ jobs:
     - uses: actions/checkout@v2
     
     - name: Install Nim
-      run: sudo apt-get update && sudo apt-get full-upgrade && wget https://nim-lang.org/choosenim/init.sh && sudo ./init.sh -y
+      run: sudo apt-get update && sudo apt-get full-upgrade && sudo wget https://nim-lang.org/choosenim/init.sh && sudo ./init.sh -y
     
     - name: Build
       run: make build
