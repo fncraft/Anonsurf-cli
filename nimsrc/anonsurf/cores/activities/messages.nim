@@ -28,7 +28,3 @@ proc cli_send_msg*(title, body: string, code: int) {.gcsafe, locks: 0.} =
   elif code == 2:
     echo fmt"[{B_RED}x{RESET}] {title}"
     echo fmt"{B_CYAN}{body}{RESET}"
-
-
-proc gtk_send_msg*(title, body: string, code: int) =
-  return 
