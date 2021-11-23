@@ -11,14 +11,6 @@ proc cmd_init_sudo*(isDesktop: bool): string =
   else:
     return "sudo"
 
-
-proc cli_init_callback_msg*(isDesktop: bool): proc =
-  if isDesktop:
-    return gtk_send_msg
-  else:
-    return cli_send_msg
-
-
 proc ansurf_acts_handle_start*(sudo: string, callback_send_messages: proc) =
   let status_start_surf = ansurf_core_start(sudo)
   if status_start_surf == 0:

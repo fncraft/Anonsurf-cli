@@ -1,11 +1,10 @@
 import strformat
-import gintro / notify
 
 # type
 #   callback_send_messenger* = proc(title, body: string, code: int)
 
 
-proc cli_send_msg*(title, body: string, code: int) =
+proc cli_send_msg*(title, body: string, code: int) {.gcsafe, locks: 0.} =
   #[
     Print message to CLI
     0: Ok
@@ -32,23 +31,4 @@ proc cli_send_msg*(title, body: string, code: int) =
 
 
 proc gtk_send_msg*(title, body: string, code: int) =
-  #[
-    Display notification with custom title, body
-    0: Ok
-    1. Warn
-    2. Error
-    3. Info
-  ]#
-  var icon_name = ""
-  if code == 0:
-    icon_name = "security-high"
-  elif code == 1:
-    icon_name = "security-medium"
-  elif code == 2:
-    icon_name = "security-low"
-  elif code == 3:
-    icon_name = "dialog-information"
-
-  discard init("AnonSurf GUI notification")
-  let ipNotify = newNotification(title, body, icon_name)
-  discard ipNotify.show()
+  return 

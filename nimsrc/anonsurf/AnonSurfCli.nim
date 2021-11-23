@@ -3,7 +3,7 @@ import os
 import cores / commons / services_status
 import cores / [handle_killapps, handle_activities]
 import cli / help
-
+import cores / activities / messages
 #[
   isDesktop: bool -> Check if current OS has Desktop Environment.
     if true:
@@ -17,7 +17,7 @@ import cli / help
 ]#
 let
   isDesktop = if getEnv("XDG_CURRENT_DESKTOP") == "": false else: true
-  callback_msg_proc = cli_init_callback_msg(isDesktop)
+  callback_msg_proc = cli_send_msg
   callback_kill_apps = init_cli_askkill(isDesktop)
   sudo = cmd_init_sudo(isDesktop)
 
