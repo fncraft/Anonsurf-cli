@@ -1,0 +1,19 @@
+name: AnonSurf-build
+
+on:
+  push:
+    branches: [ Remove-GUI ]
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install Nim
+      run: apt-get update && apt-get full-upgrade && apt-get install nim
+    
+    - name: Build
+      run: make build
