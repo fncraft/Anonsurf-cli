@@ -1,10 +1,5 @@
 # What is AnonSurf
-# Modules / componets
-1. Daemon
-2. CLI
-3. GUI
-4. extra tools
-# Installation
-# Configurations
-# Development
-# Write your own AnonSurf client
+Anonsurf is a tool created by Parrot Security that allows you to be more private and anonymous by forwarding all of your system's internet traffic through the TOR network forcefully by utilizing iptables.
+
+#How do I compile it?
+(WIP)
