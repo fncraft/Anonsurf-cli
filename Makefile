@@ -24,7 +24,6 @@ build-parrot:
 	mkdir -p bin/
 	nim c --nimcache:/tmp --out:bin/dnstool -d:release nimsrc/extra-tools/dnstool.nim
 	nim c --nimcache:/tmp --out:bin/make-torrc -d:release nimsrc/anonsurf/make_torrc.nim
-	nim c --nimcache:/tmp --out:bin/anonsurf-gtk -p:/usr/include/nim/ -d:release --gc:arc nimsrc/anonsurf/AnonSurfGTK.nim
 	nim c --nimcache:/tmp --out:bin/anonsurf -p:/usr/include/nim/ -d:release nimsrc/anonsurf/AnonSurfCli.nim
 
 build:
@@ -33,7 +32,6 @@ build:
 	mkdir -p bin/
 	nim c --out:bin/dnstool -d:release nimsrc/extra-tools/dnstool.nim
 	nim c --out:bin/make-torrc -d:release nimsrc/anonsurf/make_torrc.nim
-	nim c --out:bin/anonsurf-gtk -d:release --gc:arc nimsrc/anonsurf/AnonSurfGTK.nim
 	nim c --out:bin/anonsurf -d:release nimsrc/anonsurf/AnonSurfCli.nim
 
 install:
@@ -46,7 +44,6 @@ install:
 
 	# Copy binaries to system
 	cp bin/anonsurf $(DESTDIR)/usr/bin/anonsurf
-	cp bin/anonsurf-gtk $(DESTDIR)/usr/bin/anonsurf-gtk
 	cp bin/dnstool $(DESTDIR)/usr/bin/dnstool
 	cp bin/make-torrc $(DESTDIR)/usr/lib/anonsurf/make-torrc
 	cp daemon/anondaemon $(DESTDIR)/usr/lib/anonsurf/anondaemon
@@ -57,7 +54,6 @@ install:
 		cp launchers/anon-surf-start.desktop $(DESTDIR)/usr/share/applications/; \
 		cp launchers/anon-surf-stop.desktop $(DESTDIR)/usr/share/applications/; \
 		cp launchers/anon-check-ip.desktop $(DESTDIR)/usr/share/applications/; \
-		cp launchers/anon-gui.desktop $(DESTDIR)/usr/share/applications/; \
 	else \
 		cp launchers/non-native/*.desktop $(DESTDIR)/usr/share/applications/; \
 	fi
