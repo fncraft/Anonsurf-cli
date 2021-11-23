@@ -1,5 +1,5 @@
 # What is AnonSurf?
-AnonSurf is a tool created by Parrot Security that allows you to be more private and anonymous by forwarding all of your system's internet traffic through the TOR network forcefully by utilizing iptables.
+AnonSurf is a tool created by Parrot Security that allows you to be more private and anonymous by forwarding all of your system's internet traffic through the Tor network forcefully by utilizing iptables.
 
 # Why did you decide to create this fork?
 To that, I'd respond with the following: Making AnonSurf build and run on literally any other system than ParrotOS is simply too much of a hassle due to multiple reasons.
@@ -16,4 +16,5 @@ Those reasons being:
 3) cd anonsurf/
 4) make build (you can still run "make build-parrot" if you're on ParrotOS)
 5) *optional:* make install
+
 Note: You have to have the "tor" package installed, as this tool depends on it.
