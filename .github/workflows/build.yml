@@ -3,7 +3,9 @@ name: AnonSurf-build
 on:
   push:
     branches: [ Remove-GUI ]
-    
+  
+  workflow_dispatch:
+
 jobs:
   build:
 
