@@ -16,3 +16,4 @@ Those reasons being:
 3) cd anonsurf/
 4) make build (you can still run "make build-parrot" if you're on ParrotOS)
 5) *optional:* make install
+Note: You have to have the "tor" package installed, as this tool depends on it.
